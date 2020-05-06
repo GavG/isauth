@@ -1,16 +1,11 @@
-<script src="/assets/gavg/isAuth/isAuth.js"></script>
-<script>
-    let user={
-        name:"{{$user->name}}",
-        email:"{{$user->email}}",
-        @isset($photo) photo:"{{$photo}}" @endisset
-    };
-    let options=@json(config('isAuth.options'));
-    let auth=defineIsAuth(user,options);
-</script>
-<style>
-    .swal-icon--custom>img{
-        max-height: 250px;
-        border-radius: 50%;
-    }
-</style>
+@auth
+    <script src="/assets/SpiderWebtr/isAuth/isAuth.js"></script>
+    <script>
+        window.addEventListener('load', function(){
+            window.AuthCheck = defineIsAuth({
+                    name:"{{$user->name}}",
+                    email:"{{$user->email}}",
+                }, @json(config('isAuth.options')));
+        })
+    </script>
+@endauth
