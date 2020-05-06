@@ -1,6 +1,6 @@
 <?php
 
-namespace spiderwebtr\isauth;
+namespace gavg\isauth;
 
 use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Http\Request;

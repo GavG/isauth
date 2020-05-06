@@ -1,4 +1,4 @@
-<script src="/assets/SpiderWebtr/isAuth/isAuth.js"></script>
+<script src="/assets/gavg/isAuth/isAuth.js"></script>
 <script>
     let user={
         name:"{{$user->name}}",

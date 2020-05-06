@@ -1,10 +1,10 @@
 {
-    "name": "spiderwebtr/isauth",
+    "name": "gavg/isauth",
     "type": "library",
     "license": "MIT",
     "authors": [
         {
-            "name": "Emre Dipi",
+            "name": "Original Credit: Emre Dipi",
             "email": "mail@emredipi.com",
             "homepage": "https://emredipi.com"
         }
@@ -12,7 +12,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "spiderwebtr\\isauth\\isAuthServiceProvider"
+                "gavg\\isauth\\isAuthServiceProvider"
             ]
         }
     },
@@ -20,7 +20,7 @@
     "description": "",
     "autoload": {
         "psr-4": {
-            "spiderwebtr\\isauth\\": "src"
+            "gavg\\isauth\\": "src"
         }
     }
 }

@@ -11,7 +11,7 @@ function defineIsAuth(user, newOptions = {}){
     $.extend(options, newOptions);
     let object={
         posterror:function(){
-            swal({
+            Swal.fire({
                 title:options.texts.error,
                 icon:"error"
             });
@@ -31,36 +31,28 @@ function defineIsAuth(user, newOptions = {}){
             });
         },
         askPassword:function(callback){
-            swal({
+            Swal.fire({
                 title: user.name,
                 icon:user.photo,
-                content: {
-                    element: "input",
-                    attributes: {
-                        placeholder: options.texts.placeholder,
-                        type: "password"
-                    },
-                },
-                button: {
-                    text: options.texts.button,
-                    closeModal: false,
-                }
+                input: 'password',
+                inputPlaceholder: options.texts.placeholder,
+                confirmButtonText: options.texts.button,
             })
                 .then(password => {
                     if(password){
                         $.post("/ajaxlogin",
                             {
                                 username:user[options.loginField],
-                                password,
+                                password: password.value,
                                 loginField: options.loginField
                             }
                         ).done(data=> {
                             if(data.logged){
-                                swal.stopLoading();
-                                swal.close();
+                                Swal.stopLoading();
+                                Swal.close();
                                 if (callback) callback();
                             }else{
-                                swal({
+                                Swal.fire({
                                     title:options.texts.wrong,
                                     icon:"warning",
                                     timer: 1000,
@@ -70,7 +62,7 @@ function defineIsAuth(user, newOptions = {}){
                             object.posterror();
                         });
                     }else{
-                        swal.close();
+                        Swal.close();
                     }
                 });
         },

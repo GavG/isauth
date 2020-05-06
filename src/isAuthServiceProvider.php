@@ -1,6 +1,6 @@
 <?php
 
-namespace spiderwebtr\isauth;
+namespace gavg\isauth;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
@@ -17,7 +17,7 @@ class isAuthServiceProvider extends ServiceProvider
         Blade::include('isAuth::assets', 'isAuthAssets');
         $this->loadRoutesFrom(__DIR__.'/routes/routes.php');
         $this->publishes([
-            __DIR__.'/resources/assets/' => public_path('assets/SpiderWebtr/isAuth/'),
+            __DIR__.'/resources/assets/' => public_path('assets/gavg/isAuth/'),
         ], 'public');
         $this->publishes([
             __DIR__.'/config/' => config_path('/'),
