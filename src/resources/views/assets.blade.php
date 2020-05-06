@@ -1,5 +1,5 @@
 @auth
-    <script src="/assets/SpiderWebtr/isAuth/isAuth.js"></script>
+    <script src="/assets/gavg/isAuth/isAuth.js"></script>
     <script>
         window.addEventListener('load', function(){
             window.AuthCheck = defineIsAuth({
